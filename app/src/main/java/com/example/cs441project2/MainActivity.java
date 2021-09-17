@@ -12,6 +12,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cs441project2.databinding.ActivityMainBinding;
 
@@ -24,22 +26,24 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView listView;
-    ArrayList<String> items;
-    ArrayAdapter<String> adapter;
+    RecyclerView recyclerView;
+
+    String s1[], s2[];
+    //int images[] = {R.drawable.c_plus_plus, R.drawable.c_sharp};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = findViewById(R.id.listview);
-        items = new ArrayList<>();
-        items.add("Item 1");
+        recyclerView = findViewById(R.id.recyclerView);
 
-        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, items);
-        listView.setAdapter(adapter);
+        s1 = getResources().getStringArray(R.array.grocery_list);
+        s2 = getResources().getStringArray(R.array.description);
 
+        MyAdapter myAdapter= new MyAdapter(this, s1, s2);
+        recyclerView.setAdapter(myAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context.this));
     }
 
 
