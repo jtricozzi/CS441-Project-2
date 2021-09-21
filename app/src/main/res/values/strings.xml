@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">CS441 Project 2</string>
+    <string name="grocery_list">CS441 Project 2</string>
+
 
     <string-array name="grocery_list">
     <item>firstItem</item>>
