@@ -1,13 +1,3 @@
 <resources>
-    <string name="grocery_list">CS441 Project 2</string>
-
-
-    <string-array name="grocery_list">
-    <item>firstItem</item>>
-    </string-array>>
-
-    <string-array name="description">
-        <item>firstItem description</item>>
-    </string-array>>
-
+    <string name="app_name">My Application 2</string>
 </resources>
